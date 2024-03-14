@@ -1,0 +1,23 @@
+button.naoimprimir {
+    
+    display:none;
+    backface-visibility: hidden;
+    
+}
+
+img.naoexibe {
+    
+    visibility:visible;
+}
+
+div.naoexibe {
+    
+    visibility: visible;
+    
+}
+
+input.naoimprimir {
+    
+    visibility: hidden;
+    
+}
