@@ -20,7 +20,7 @@ FROM
 
 
 VW_FUNCIONARIOS F
-where (F.CODIGOEMPRESA = 2   AND
+where (F.CODIGOEMPRESA = 1   AND
   F.CODIGOFL      = 1   AND
   F.SITUACAOFUNC  IN ('A','F','D'))
 
@@ -39,7 +39,7 @@ ORDER BY CHAPAFUNC
         $nomefunc   =       ociresult($buscaDadosFunc,"NOMEFUNC");
         $funcao     =       ociresult($buscaDadosFunc,"DESCFUNCAO");
         $codarea    =       ociresult($buscaDadosFunc,"CODAREA");
-	$situacao   = 	    ociresult($buscaDadosFunc,"SITUACAOFUNC");
+	      $situacao   = 	    ociresult($buscaDadosFunc,"SITUACAOFUNC");
 
 
             
@@ -54,21 +54,21 @@ ORDER BY CHAPAFUNC
             if ($pesquisa_mysql == 0 ) {
 
                   $insere_mysql = mysql_query("
-                  INSERT INTO FUNCIONARIOS(CODINTFUNC,CHAPAFUNC,NOMEFUNC,FUNCAO,CODAREA) 
+                  INSERT INTO FUNCIONARIOS(CODINTFUNC,CHAPAFUNC,NOMEFUNC,FUNCAO,CODAREA,SITUACAOFUNC) 
                   VALUES
-                  ($codintfunc,$chapafunc,'$nomefunc','$funcao',$codarea)
+                  ('$codintfunc','$chapafunc','$nomefunc','$funcao',$codarea,'$situacao')
                   ");
                   if (!$insere_mysql) {
                     print "Erro ao inserir no Mysql: " . mysql_error();
                   } else {
-                    print "CODINTFUNC  " . $codintfunc . " Chapa: " . $chapafunc . " inserido com sucesso! <br/>";
+                    print "CODINTFUNC  " . $codintfunc . " Chapa: " . $chapafunc . " inserido com sucesso! \n";
 		    
 		    
             } } else {
 
 		print "Funcionario chapa $chapafunc ja esta cadastrado. \n";
 
-		$atualizaFunc = mysql_query("UPDATE FUNCIONARIOS SET FUNCAO='$funcao' , CHAPAFUNC='$chapafunc' , SITUACAOFUNC='$situacao', CODAREA=$codarea WHERE CODINTFUNC=$codintfunc");
+		$atualizaFunc = mysql_query("UPDATE FUNCIONARIOS SET FUNCAO='$funcao' , CHAPAFUNC='$chapafunc' , SITUACAOFUNC='$situacao', CODAREA=$codarea WHERE CODINTFUNC='$codintfunc'");
 		print "CODINTFUNC: " . $codintfunc . " atualizado com sucesso! \n";
 
 		
