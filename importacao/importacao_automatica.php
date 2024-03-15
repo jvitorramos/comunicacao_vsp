@@ -91,7 +91,7 @@ ORDER BY CHAPAFUNC
     // registra no log.
     $dataLOG = date("Y-m-d H:i:s");
     $registraLOG = mysql_query("
-    INSERT INTO LOG(USUARIO,IP,ACAO,DATA) VALUES ('SISTEMA','0.0.0.0','IMPORTACAO GLOBUS','$dataLOG')
+    INSERT INTO LOG(USUARIO,IP,ACAO,DATA) VALUES ('SISTEMA','0.0.0.0','IMPORTACAO GLOBUS - FUNCIONARIOS','$dataLOG')
    ");
 
     $registraLOG_importacao = mysql_query("INSERT INTO LOG_IMPORTACAO(DATALOG) VALUES ('$dataLOG')");

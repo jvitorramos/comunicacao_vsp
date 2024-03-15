@@ -42,30 +42,10 @@ WHERE
                     print "Erro ao inserir no Mysql: " . mysql_error();
                   } else {
                     print "Linha: " . $codigolinha . " inserido com sucesso! \n";
-		    
-		    
-            } } else {
-
-		print "Linha $codigolinha ja esta cadastrado. \n";
-
-		$atualizaFunc = mysql_query("UPDATE LINHAS SET CODIGOLINHA='$codigolinha', NOMELINHA='$nomelinha'");
-		print "LINHA: " . $codigolinha . " atualizado com sucesso! \n";
-
-		
-		if (!$atualizaFunc) {
-		  print "Erro ao atualizar." . mysql_error() . "\n";
-		  
-		}
-              
-
-
-
-            }
-
-            
+		        } }            
 
         
-    }
+             }
 
 
     // registra no log.

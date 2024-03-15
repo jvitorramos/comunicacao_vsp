@@ -44,28 +44,16 @@ WHERE
                     print "Prefixo: " . $prefixoveic . " inserido com sucesso! \n";
 		    
 		    
-            } } else {
+                  }
+           
+                   
+    } else {
 
-		print "Prefixo $prefixoveic ja esta cadastrado. \n";
-
-		$atualizaFunc = mysql_query("UPDATE VEICULOS SET PREFIXOVEIC='$prefixoveic'");
-		print "PREFIXO: " . $prefixoveic . " atualizado com sucesso! \n";
-
-		
-		if (!$atualizaFunc) {
-		  print "Erro ao atualizar." . mysql_error() . "\n";
-		  
-		}
-              
-
-
-
-            }
-
-            
-
-        
+      print "Veiculo ja cadastrado \n";
+      
     }
+
+  }
 
 
     // registra no log.
