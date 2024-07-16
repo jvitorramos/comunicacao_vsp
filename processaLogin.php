@@ -85,7 +85,7 @@ $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
                 $_SESSION['usuario'] = $inputUsuario;
                 $_SESSION['alteraSenha'] = "S";
 
-                header("Location:../../alterasenha/?sistema=comunic");
+                header("Location:../../alterasenha/?sistema=comunic_vsp");
                 exit();
             }
 

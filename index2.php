@@ -78,6 +78,8 @@ $totalOcorrencias = mysql_result($totalOcorrencias,0);
 <!doctype html>
     <html lang="pt-br">
     <head>
+
+    <link rel="icon" type="image/x-icon" href="assets/img/vsp.ico">
         
     <style>
         
@@ -112,7 +114,7 @@ $totalOcorrencias = mysql_result($totalOcorrencias,0);
             <div class="row"> 
                 <div class="col-12">
                     <nav class="navbar navbar-light bg-light navbar-expand-lg"> 
-						<a class="navbar-brand" href="#"><img src="assets/img/logo.jpg" width="180" height="50" alt="GTSA"></a>
+						<a class="navbar-brand" href="#"><img src="assets/img/vsp.jpg" width="180" height="50" alt="GTSA"></a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav1" aria-controls="#nav1" aria-expanded="false" aria-label="Navegação">
 							<span class="navbar-toggler-icon"></span>
 						</button>
@@ -204,9 +206,10 @@ $totalOcorrencias = mysql_result($totalOcorrencias,0);
                     <!-- Busca os funcionários direto na base do Globus. -->
                     <?php
 		            
-                    $buscaLinha = mysql_query("SELECT DISTINCT CODIGOLINHA FROM LINHAS");
+                    $buscaLinha = mysql_query("SELECT CODIGOLINHA,NOMELINHA FROM LINHAS ORDER BY CODIGOLINHA");
                         while ($l_buscaLinha = mysql_fetch_array($buscaLinha)) {
                             $codigolinha = $l_buscaLinha['CODIGOLINHA'];
+                            $nomelinha  = $l_buscaLinha['NOMELINHA'];
                             
 		                  print "<option name='$codigolinha'>$codigolinha</option>";
                             

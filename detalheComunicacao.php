@@ -183,7 +183,7 @@ if ($exclui) {
                     <nav class="navbar navbar-light bg-light navbar-expand-lg"> 
                     
                     
-                    <a class="navbar-brand" href="#"><img src="assets/img/logo.jpg" width="180" height="50" alt="GTSA"></a>
+                    <a class="navbar-brand" href="#"><img src="assets/img/vsp.jpg" width="180" height="50" alt="GTSA"></a>
                         
                         
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav1" aria-controls="#nav1" aria-expanded="false" aria-label="Navegação">
@@ -236,7 +236,7 @@ if ($exclui) {
             <div class="row">
                 <div class="col-12 col-md-12">
                             
-                <img class="img-fluid naoexibe" src="assets/img/logo.png" width="250" height="250">
+                <img class="img-fluid naoexibe" src="assets/img/vsp.jpg" >
                 
             </div>
             </div>
@@ -320,6 +320,13 @@ if ($exclui) {
                 $obs        =       strtoupper($linha['OBS']);
                 $user_id    =       $linha['USER_ID'];
                 $lin        =       $linha['LINHA'];
+
+                  $getNomeLinha = mysql_query("
+                  SELECT NOMELINHA FROM LINHAS WHERE CODIGOLINHA = '$lin'
+                  ");
+                  $getNomeLinha = mysql_result($getNomeLinha,0);
+
+
                 $func_nome  =       $linha['FUNC_NOME'];
                 $id         =       $linha['ID'];
                 $veiculo    =       $linha['VEICULO'];
@@ -350,14 +357,14 @@ if ($exclui) {
             </div>
                 
                          
-              <div class="col-12 col-md-2">
+              <div class="col-12 col-md-3">
                <div class="form-group">
                  <label for="inputSentido" class="ocorrencia">Linha:</label>
-                 <input id="inputData" type="text" readonly class="ocorrencia form-control border border-dark bg bg-white" value="<?php print $lin;?>">
+                 <input id="inputData" type="text" readonly class="ocorrencia form-control border border-dark bg bg-white" value="<?php print $lin . "-" . $getNomeLinha;?>">
                </div>
             </div>
                 
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-5">
                <div class="form-group">
                  <label for="inputSentido" class="ocorrencia">Funcionário:</label>
                  <input id="inputData" type="text" readonly class="ocorrencia form-control border border-dark bg bg-white" value="<?php print $func_chapa . "-" . $func_nome;?>">
@@ -465,7 +472,7 @@ if ($exclui) {
                             print "</div>";
                             
                             print "<div class='col-6 col-md-6 assinatura text-center'>";
-                            print "___________________________________________ <br /> GUARULHOS TRANSPORTES S/A <br />";
+                            print "___________________________________________ <br /> VIAÇÃO SAENS PENA LTDA <br />";
                             print "</div>";
                             
                         }
@@ -525,7 +532,7 @@ if ($exclui) {
 
                           print "<div class='col-12 col-md-12 mb-4 mt-3'>";
                           print "Assinatura do funcionário: ________________________________________________________ ( $func_nome )";
-                          print "<p class='mt-5'> Guarulhos , ______ , de ________________ de ______ </p>";
+                          print "<p class='mt-5'> São José dos Campos , ______ , de ________________ de ______ </p>";
                           print "</div>";
 
 

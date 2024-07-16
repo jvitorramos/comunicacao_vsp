@@ -106,7 +106,7 @@ $totalOcorrencias = mysql_result($totalOcorrencias,0);
                     <nav class="navbar navbar-light bg-light navbar-expand-lg"> 
                     
                     
-                    <a class="navbar-brand" href="#"><img src="assets/img/logo.jpg" width="180" height="50" alt="GTSA"></a>
+                    <a class="navbar-brand" href="#"><img src="assets/img/vsp.jpg" width="180" height="50" alt="GTSA"></a>
                         
                         
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav1" aria-controls="#nav1" aria-expanded="false" aria-label="Navegação">
@@ -201,7 +201,7 @@ $totalOcorrencias = mysql_result($totalOcorrencias,0);
         WHERE
                STATUS='A' AND
                CODAREA $permDept
-        ORDER BY ID DESC , DATA DESC
+        ORDER BY DATA DESC
         LIMIT 0,100
         ");
                                  

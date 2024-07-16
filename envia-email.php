@@ -51,21 +51,28 @@
 			$mail->IsSMTP(); // Define que a mensagem será SMTP
  
 		try {
-			$mail->Host = 'smtp.bra.terra.com.br'; // Endereço do servidor SMTP (Autenticação, utilize o host smtp.seudomínio.com.br)
+
+
+			//$mail->Host = 'smtp.bra.terra.com.br'; // servidor SMTP (Autenticação, utilize o host smtp.seudomínio.com.br)
+			//$mail->SMTPAuth   = true;  // Usar autenticação SMTP (obrigatório para smtp.seudomínio.com.br)
+			//$mail->Port       = 587; //  Usar 587 porta SMTP
+			//$mail->Username = 'gt.info@terra.com.br'; // Usuário do servidor SMTP (endereço de email)
+			//$mail->Password = 'Qwe0rty1'; // Senha do servidor SMTP (senha do email usado)
+ 
+			$mail->Host = 'smtp.bra.terra.com.br'; // servidor SMTP (Autenticação, utilize o host smtp.seudomínio.com.br)
 			$mail->SMTPAuth   = true;  // Usar autenticação SMTP (obrigatório para smtp.seudomínio.com.br)
 			$mail->Port       = 587; //  Usar 587 porta SMTP
-			$mail->Username = 'gt.info@terra.com.br'; // Usuário do servidor SMTP (endereço de email)
+			$mail->Username = 'comunicacao.vsp@terra.com.br'; // Usuário do servidor SMTP (endereço de email)
 			$mail->Password = 'Qwe0rty1'; // Senha do servidor SMTP (senha do email usado)
- 
-			
+
  
 			//Define o remetente
 			// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=    
 			
 			$subject = "* Comunicacao Interna *  Funcionario Envolvido: $chapaFunc";
 			
-			$mail->SetFrom('gt.info@terra.com.br', 'Sistema de Ocorrencias - Guarulhos Transportes'); //Seu e-mail
-			$mail->AddReplyTo('gt.info@terra.com.br', 'Sistema de Ocorrencias - Guarulhos Transportes'); //Seu e-mail
+			$mail->SetFrom('comunicacao.vsp@terra.com.br', 'Sistema de Ocorrencias - Guarulhos Transportes'); //Seu e-mail
+			$mail->AddReplyTo('comunicacao.vsp@terra.com.br', 'Sistema de Ocorrencias - Guarulhos Transportes'); //Seu e-mail
 			$mail->Subject = $subject; //Assunto do e-mail
  
 	
@@ -74,7 +81,7 @@
 			//Define os destinatário(s)
 			//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 			
-			$email = "ti@onibusguarulhos.com.br";
+			$email = "joao.vitor@saenspenasjc.com.br";
 			$campoPara = "TI";
 			
 			
@@ -95,7 +102,7 @@
             Funcionario: $chapaFunc - $nomeFunc. <br />
             Conteudo da comunicacao: $txt_obs <br />
 			<br /> 
-			Para visualizar a comunicacao completa, acesse: http://comunicacao.guarulhostransportes.com.br  <br />
+			Para visualizar a comunicacao completa, acesse: http://comunicacao.saenspenasjc.com.br  <br />
 			<b> ID da comunicacao: $idGerado </b>
 			";
 		  
@@ -108,10 +115,10 @@
 			//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 			
 			//$mail->AddCC('ti2@onibusguarulhos.com.br', 'ti2'); // Copia
-			$mail->AddCC('sival.goncalves@guarulhostransportes.com.br', 'Sival'); // Copia
-			$mail->AddCC('alessandro.santos@guarulhostransportes.com.br', 'Alessandro'); // Copia
-			$mail->AddCC('joao.vitor@guarulhostransportes.com.br', 'Joao_Vitor'); // Copia
-			$mail->AddCC('celso.alda@guarulhostransportes.com.br', 'Celso_Alda'); // Copia
+			$mail->AddCC('decio.fonseca@saenspenasjc.com.br', 'Decio Fonseca'); // Copia
+			$mail->AddCC('erica.arantes@saenspenasjc.com.br', 'Erica Arantes'); // Copia
+			$mail->AddCC('joao.vitor@saenspenasjc.com.br', 'Joao Vitor'); // Copia
+			$mail->AddCC('celso.alda@guarulhostransportes.com.br', 'Celso Alda'); // Copia
 		//$mail->AddAttachment('images/phpmailer.gif');      // Adicionar um anexo
  
 			//}

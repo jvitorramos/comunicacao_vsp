@@ -2,7 +2,7 @@
 
 $server = "10.0.0.241";
 $user = "root";
-$db = "comunic";
+$db = "comunic_vsp";
 $passwd = "060777";
 
 

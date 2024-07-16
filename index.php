@@ -72,7 +72,8 @@ if ($login || $_SESSION['login']) {
 <!doctype html>
     <html lang="pt-br">
     <head>
-        
+    <link rel="icon" type="image/x-icon" href="assets/img/vsp.ico">
+    
     <style>
         
         .container {
@@ -111,7 +112,7 @@ if ($login || $_SESSION['login']) {
     
   
   <div class="mx-auto align-self-center" id="div-home">
-      <img src="assets/img/logo.jpg" class="rounded mx-auto d-block" width="300" />
+      <img src="assets/img/vsp.jpg" class="rounded mx-auto d-block" width="300" />
       
       
       
